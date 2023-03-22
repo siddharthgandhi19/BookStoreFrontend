@@ -1,10 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import Login from './Component/Login/Login';
+import SignUp from './Component/SignUp/SignUp';
+import Lander from './Pages/Lander/Lander';
+
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to bookstore</h1>
+      {/* <SignUp/> */}
+    {/* <Login/> */}
+    <Lander/>
     </div>
   );
 }

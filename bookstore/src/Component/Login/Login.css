@@ -1,0 +1,25 @@
+.LoginMainContainer{
+    width: 21vw;
+    height: 45vh;
+    /* border: solid green; */
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.LoginButton{
+    width: 18vw;
+    gap: 4vh;
+}
+.OrTextDiv{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+    font: bolder
+}
+.FaceBookGoogleButton{
+    position: relative;
+    top: -20px;
+}

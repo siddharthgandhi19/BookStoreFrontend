@@ -1,0 +1,13 @@
+.SignUpMainContainer{
+    width: 21vw;
+    height: 45vh;
+    /* border: solid green; */
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    /* gap: 8px; */
+}
+.SignUpButton{
+    width: 18vw;
+}
