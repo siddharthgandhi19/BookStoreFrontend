@@ -3,6 +3,7 @@ import Login from './Component/Login/Login';
 import SignUp from './Component/SignUp/SignUp';
 import ForgotPassword from './Pages/ForgotPasswordPage/ForgotPasswordPage';
 import Lander from './Pages/Lander/Lander';
+import ResetPasswordPage from './Pages/ResetPasswordPage/ResetPasswordPage';
 
 
 
@@ -12,7 +13,8 @@ function App() {
       {/* <SignUp/> */}
     {/* <Login/> */}
     {/* <Lander/> */}
-    <ForgotPassword/>
+    {/* <ForgotPassword/> */}
+    <ResetPasswordPage/>
     </div>
   );
 }
