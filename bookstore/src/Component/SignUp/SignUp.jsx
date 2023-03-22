@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import '../SignUp/SignUp.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { SignUpApi } from "../../Services/UserService";
 
 
 const nameRegex =/^[A-Za-z]+(?:[.'\-\s]?[A-Za-z]+)*$/
@@ -15,7 +16,7 @@ function SignUp() {
         fullname:"",
         email:"",
         password:"",
-        mobilenumber:","
+        mobile:""
     })
 
     const [regexSignup, setRegexSignup] = useState({
@@ -48,14 +49,14 @@ function SignUp() {
     }
     const inputMobile =(event)=>{
         console.log(event.target.value)
-        setUserSignup(prevState=>({ ...prevState, mobilenumber: event.target.value }))
+        setUserSignup(prevState=>({ ...prevState, mobile: event.target.value }))
     }
 
     const SubmitSignup = ()=>{
         let fullnameTest = nameRegex.test(userSignUp.fullname)
         let emailTest = emailRegex.test(userSignUp.email)
         let passwordTest = passwordRegex.test(userSignUp.password)
-        let mobileTest = mobileRegex.test(userSignUp.mobilenumber)
+        let mobileTest = mobileRegex.test(userSignUp.mobile)
         console.log(fullnameTest)
         console.log(emailTest)
         console.log(passwordTest)
@@ -88,6 +89,16 @@ function SignUp() {
         }
         else if (mobileTest === true) {
             setRegexSignup(prevState => ({ ...prevState,  mobileErrorBorder:false,  mobileHelperText:"" }))
+        }
+
+        if(regexSignup.fullnameErrorBorder === false && regexSignup.emailErrorBorder === false && regexSignup.passwordErrorBorder === false && regexSignup.mobileErrorBorder === false ){
+            SignUpApi(userSignUp)
+            .then(response => {
+                console.log(response)
+            })
+            .catch(error => {
+                console.log(error)
+            })
         }
     }
 
