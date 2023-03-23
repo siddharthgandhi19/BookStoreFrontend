@@ -3,6 +3,7 @@ import './ForgotPasswordPage.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
+import { ForgotApi } from "../../Services/UserService";
 
 const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
 
@@ -38,10 +39,17 @@ function ForgotPassword() {
             setRegexObj(prevState => ({ ...prevState, emailBorder: false, emailHelper: '' }))
         }
 
-        if (emailTest === true) {
+        if (emailTest === true){
+            ForgotApi(emailVerify)
+                .then(response => {
+                    console.log(response)
+                    localStorage.setItem('token', response.data.data)
+                })
+                .catch(error => {
+                    console.log(error)
+                })
         navigate('/resetpassword')
         }
-
     }
 
      const navigateToSignup = () =>{
