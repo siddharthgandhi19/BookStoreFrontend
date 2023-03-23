@@ -1,10 +1,10 @@
 import './App.css';
 import Login from './Component/Login/Login';
 import SignUp from './Component/SignUp/SignUp';
-import ForgotPassword from './Pages/ForgotPasswordPage/ForgotPasswordPage';
+import ForgotPassword from './Component/ForgotPasswordPage/ForgotPasswordPage';
 import Lander from './Pages/Lander/Lander';
-import ResetPasswordPage from './Pages/ResetPasswordPage/ResetPasswordPage';
-
+import ResetPasswordPage from './Component/ResetPasswordPage/ResetPasswordPage';
+import Router1 from './Router/Router';
 
 
 function App() {
@@ -14,7 +14,8 @@ function App() {
     {/* <Login/> */}
     {/* <Lander/> */}
     {/* <ForgotPassword/> */}
-    <ResetPasswordPage/>
+    {/* <ResetPasswordPage/> */}
+    <Router1/>
     </div>
   );
 }

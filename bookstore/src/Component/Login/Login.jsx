@@ -3,6 +3,7 @@ import './Login.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { LoginApi } from '../../Services/UserService';
+import { useNavigate } from 'react-router-dom';
 
 const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
 const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
@@ -65,6 +66,12 @@ function Login() {
         }
     }
 
+    let navigate = useNavigate()
+
+    const Forgot =()=>{
+        navigate('/forgetpassword')
+    }
+
     return (
         <>
            <div className="LoginMainContainer">
@@ -83,7 +90,7 @@ function Login() {
              error={regexObj.passwordBorder}
              helperText={regexObj.passwordHelper}
             id="outlined-basic" variant="outlined" size="small" style={{width:'18vw'}}/>
-            <div style={{ display: 'flex', justifyContent: 'end', cursor: 'pointer' ,fontSize: '12px', color:'#9D9D9D'}}>Forget Password?</div>
+            <div onClick={Forgot} style={{ display: 'flex', justifyContent: 'end', cursor: 'pointer' ,fontSize: '12px', color:'#9D9D9D'}}>Forget Password?</div>
             </div>
             <Button onClick={SubmitLogin} className="LoginButton" size="small" variant="contained" style={{ backgroundColor: '#A03037', textTransform: 'none', fontSize: '17px', marginTop: '10px' }}>
                     Login
@@ -96,7 +103,7 @@ function Login() {
                 </div>
                 <div className="FaceBookGoogleButton">
                     <Button size="small" variant="contained" style={{ textTransform: 'none', fontSize: '12px', marginRight: '0.5vw', width: '8vw', backgroundColor: '#4266B2' }}>
-                        FaceBook
+                        Facebook
                     </Button>
                     <Button size="small" variant="outlined" style={{ textTransform: 'none', fontSize: '12px', width: '8vw', backgroundColor: '#F5F5F5', borderColor: '#E4E4E4', color: '#0A0102' }}>
                         Google
