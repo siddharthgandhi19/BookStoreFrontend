@@ -1,0 +1,94 @@
+.BookCatalogueMainContainer{
+    width: 17vw;
+    height: 42vh;
+    /* border: solid red; */
+    border: 1px solid #E2E2E2;
+}
+.BookImage{
+    width: 100%;
+    height:65%;
+    /* border: solid green;     */
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imageBook{
+    /* border: solid green; */
+}
+.BookDetail{
+    width: 100%;
+    height: 35%;
+    /* border: solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.BookTitle{
+    width: 80%;
+    height: 20%;
+    /* border: solid orange; */
+    font-family:normal normal normal 14px/19px Roboto;
+    font-size: 15px;
+    color: #0A0102;
+    text-align: left;
+}
+.AuthorName{
+    width: 80%;
+    height: 18%;
+    /* border: solid purple ; */
+    color: #878787;
+    font-family: Roboto;
+    font-size: 12px;
+    text-align: left;
+}
+.BookRatingCount{
+    width: 25%;
+    height: 20%;
+    /* border: solid orange; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: relative;
+    left: -65px;
+    font-size: 13px;
+
+}
+.BookRating{
+    width: 50%;
+    height: 100%;
+    /* border: solid purple ; */
+    text-align: left;
+}
+.BookCount{
+    width: 50%;
+    height: 100%;
+    /* border: solid purple ; */
+}
+.Price{
+    width: 50%;
+    height: 20%;
+    /* border: solid orange; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+    position: relative;
+    left: -35px;
+}
+.DiscountPrice{
+    width: 50%;
+    height: 100%;
+    /* border: solid red ; */
+    font-weight: bold;
+    font-size: 12px;
+}
+.OriginalPrice{
+    width: 50%;
+    height: 100%;
+    /* border: solid red ; */
+    text-decoration: line-through;
+    font-size: 10.5px;
+}

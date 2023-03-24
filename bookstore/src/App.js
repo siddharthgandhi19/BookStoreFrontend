@@ -6,6 +6,7 @@ import Lander from './Pages/Lander/Lander';
 import ResetPasswordPage from './Component/ResetPasswordPage/ResetPasswordPage';
 import Router1 from './Router/Router';
 import Header from './Component/Header/Header';
+import BookCatalogue from './Component/BookCatalogue/BookCatalogue';
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
     {/* <ForgotPassword/> */}
     {/* <ResetPasswordPage/> */}
     {/* <Router1/> */}
-    <Header/>
+    {/* <Header/> */}
+    <BookCatalogue/>
     </div>
   );
 }
