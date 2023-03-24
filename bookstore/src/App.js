@@ -5,6 +5,7 @@ import ForgotPassword from './Component/ForgotPasswordPage/ForgotPasswordPage';
 import Lander from './Pages/Lander/Lander';
 import ResetPasswordPage from './Component/ResetPasswordPage/ResetPasswordPage';
 import Router1 from './Router/Router';
+import Header from './Component/Header/Header';
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
     {/* <Lander/> */}
     {/* <ForgotPassword/> */}
     {/* <ResetPasswordPage/> */}
-    <Router1/>
+    {/* <Router1/> */}
+    <Header/>
     </div>
   );
 }
