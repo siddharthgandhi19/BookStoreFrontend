@@ -1,7 +1,8 @@
 import React from 'react'
 import '../BookCatalogue/BookCatalogue.css'
+import StarIcon from '@mui/icons-material/Star';
 
-function BookCatalogue() {
+function BookCatalogue(props) {
     return (
         <>
             <div className="BookCatalogueMainContainer">
@@ -10,18 +11,18 @@ function BookCatalogue() {
                 </div>
                 <div className="BookDetail">
                     <div className="BookTitle">
-                    Don't Make Me Think
+                    {/* Don't Make Me Think */} {props.book.bookName}
                     </div>
                     <div className="AuthorName">
-                    by Steve Krug
+                    {/* by Steve Krug */}  {props.book.authorName}
                     </div>
                     <div className="BookRatingCount">
-                        <div className="BookRating">4.9</div>
-                        <div className="BookCount">(20)</div>
+                        <div className="BookRating">{props.book.rating} <StarIcon style={{fontSize:'small', color:'#ffffff'}}/></div>
+                        <div className="BookCount">{props.book.bookCount}</div>
                     </div>
                     <div className="Price">
-                        <div className="DiscountPrice">Rs. 1500</div>
-                        <div className="OriginalPrice">Rs. 2000</div>
+                        <div className="DiscountPrice">Rs. {props.book.discountPrice}</div>
+                        <div className="OriginalPrice">Rs. {props.book.originalPrice}</div>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,7 @@ import Router1 from './Router/Router';
 import Header from './Component/Header/Header';
 import BookCatalogue from './Component/BookCatalogue/BookCatalogue';
 import StartUpPage from './Component/StartUpPage/StartUpPage';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     {/* <Header/> */}
     {/* <BookCatalogue/> */}
     {/* <StartUpPage/> */}
+    {/* <Dashboard/> */}
     </div>
   );
 }

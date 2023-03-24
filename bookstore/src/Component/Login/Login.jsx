@@ -35,6 +35,8 @@ function Login() {
 
     }
 
+    let navigate = useNavigate()
+
     const SubmitLogin = () => {
         console.log(userDetail)
         let emailTest = emailRegex.test(userDetail.email)
@@ -59,14 +61,16 @@ function Login() {
             LoginApi(userDetail)
                 .then(response => {
                     console.log(response)
+                    navigate('/dashboard')
                 })
                 .catch(error => {
                     console.log(error)
                 })
         }
+        
     }
 
-    let navigate = useNavigate()
+    
 
     const Forgot =()=>{
         navigate('/forgetpassword')
