@@ -1,6 +1,6 @@
 .HeaderMainContainer {
     width: 100vw;
-    height: 9vh;
+    height: 10vh;
     background-color: #A03037;
     display: flex;
     align-items: center;
@@ -8,7 +8,7 @@
 
 .HeaderBookStoreLogo {
     position: relative;
-    left: 140px;
+    left: 180px;
 }
 
 .HeaderText {
@@ -16,7 +16,7 @@
     font-size: 20px;
     opacity: 1;
     position: relative;
-    left: 145px;
+    left: 190px;
     top: -2px;
 }
 
@@ -38,11 +38,11 @@
     border-radius: 2px;
     background-color: white;
     position: relative;
-    left: 200px;
+    left: 240px;
 }
 .Profile{
     position: relative;
-    left: 350px;
+    left: 390px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -54,6 +54,6 @@
 }
 .cart{
     position: relative;
-    left: 390px;
+    left: 420px;
     /* border: solid red; */
 }

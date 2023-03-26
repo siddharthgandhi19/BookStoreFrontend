@@ -7,7 +7,7 @@ function BookCatalogue(props) {
         <>
             <div className="BookCatalogueMainContainer">
                 <div className="BookImage">
-                    <img className='imageBook' src="https://public-v2links.adobecc.com/d096df37-ca37-4026-553f-8cfa6bec09ec/component?params=component_id%3A2fc5cbdd-6739-4109-8fe3-577ff0ceef47&params=version%3A0&token=1679718493_da39a3ee_43de59a6449430a8428d14e6632d3420f7fc3a2e&api_key=CometServer1" alt="" />
+                    <img  className='imageBook' src={props.book.bookImage}  alt="" />
                 </div>
                 <div className="BookDetail">
                     <div className="BookTitle">

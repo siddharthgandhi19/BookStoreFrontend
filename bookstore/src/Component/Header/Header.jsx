@@ -13,7 +13,7 @@ function Header() {
         <>
             <div className="HeaderMainContainer">
                 <div className="HeaderBookStoreLogo">
-                    <img src="https://public-v2links.adobecc.com/d096df37-ca37-4026-553f-8cfa6bec09ec/component?params=component_id%3Aa5b33713-5c6d-45cb-8c64-81e6721d4f29&params=version%3A0&token=1679546769_da39a3ee_9ad95e5baef04978f6acef7ca2b00baa916aee2e&api_key=CometServer1" alt="" />
+                    <img src="https://public-v2links.adobecc.com/d096df37-ca37-4026-553f-8cfa6bec09ec/component?params=component_id%3A34a6421f-a569-47b8-bc37-078211517464&params=version%3A0&token=1679892969_da39a3ee_4d727168cad1fad34d16d4d54426edd7edcfda0d&api_key=CometServer1" alt="" />
                 </div>
                 <div className="HeaderText">
                     Bookstore

@@ -3,6 +3,7 @@
     height: 42vh;
     /* border: solid red; */
     border: 1px solid #E2E2E2;
+    border-radius: 5px;
 }
 .BookImage{
     width: 100%;

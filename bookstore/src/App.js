@@ -9,6 +9,7 @@ import Header from './Component/Header/Header';
 import BookCatalogue from './Component/BookCatalogue/BookCatalogue';
 import StartUpPage from './Component/StartUpPage/StartUpPage';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import BookDetail from './Component/BookDetail/BookDetail';
 
 
 function App() {
@@ -19,11 +20,12 @@ function App() {
     {/* <Lander/> */}
     {/* <ForgotPassword/> */}
     {/* <ResetPasswordPage/> */}
-    <Router1/>
+    {/* <Router1/> */}
     {/* <Header/> */}
     {/* <BookCatalogue/> */}
     {/* <StartUpPage/> */}
     {/* <Dashboard/> */}
+    <BookDetail/>
     </div>
   );
 }

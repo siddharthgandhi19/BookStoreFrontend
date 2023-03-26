@@ -1,0 +1,244 @@
+.MainContainerBookDetail {
+    width: 100vw;
+    height: 200vh;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.MiddleSectionBookDetail {
+    width: 100vw;
+    height: 150vh;
+    /* border: solid blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.HeaderMiddleSectionBookDetail {
+    width: 73vw;
+    height: 10vh;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Home {
+    width: 4.5%;
+    /* border: solid red; */
+    text-align: left;
+    color: #9D9D9D;
+    font-size: 12px;
+
+}
+
+.BookId {
+    width: 5%;
+    /* border: solid red; */
+    text-align: left;
+    font-size: 12px;
+}
+
+.BookDescriptionBookDetail {
+    width: 73vw;
+    height: 120vh;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: row;
+}
+
+.LeftContainerBookDetail {
+    width: 39%;
+    height: 65%;
+    /* border: solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.ImageBoxBookDetail {
+    width: 100%;
+    height: 85%;
+    border: 1px solid #878787;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ImageBottomButtonBookDetail {
+    width: 100%;
+    height: 10%;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.MiddleEmptyBox {
+    width: 5%;
+}
+
+.RightContainerBookDetail {
+    width: 50%;
+    height: 100%;
+    /* border: solid pink; */
+}
+
+.BookDetails {
+    width: 100%;
+    height: 23%;
+    /* border: solid green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: start;
+}
+
+.TitleBookDetail {
+    width: 60%;
+    height: 25%;
+    /* border: solid green; */
+    font-size: 29px;
+}
+
+.AuthorNameBookDetail {
+    width: 40%;
+    height: 20%;
+    /* border: solid green; */
+    color: #878787;
+}
+
+.BookRatingCountBookDetail {
+    width: 40%;
+    height: 18%;
+    /* border: solid black; */
+    display: flex;
+    flex-direction: row;
+}
+
+.BookRatingBookDetail {
+    width: 18%;
+    height: 50%;
+    border: solid #388E3C;
+    background-color: #388E3C;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.BookCountBookDetail {
+    width: 30%;
+    height: 90%;
+    /* border: solid red; */
+    position: relative;
+    left: 10px;
+}
+
+.PriceBookDetail {
+    width: 80%;
+    height: 25%;
+    /* border: solid green; */
+    display: flex;
+    flex-direction: row;
+}
+
+.DiscountPriceBookDetail {
+    width: 36%;
+    height: 90%;
+    /* border: solid red; */
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.OriginalPriceBookDetail {
+    width: 40%;
+    height: 80%;
+    /* border: solid red; */
+    text-decoration: line-through;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    color: #878787;
+}
+
+.BookDescription {
+    width: 100%;
+    height: 22%;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+   
+}
+.titleBookDescription{
+    width: 20%;
+    height: 22%;
+    /* border: solid red; */
+    text-align: start;
+    font-weight: bold;
+    text-align: center;
+    color: #878787;
+   
+}
+.descriptionBookDescription{
+
+    display: -webkit-box;   
+   -webkit-line-clamp: 4;   
+   -webkit-box-orient: vertical;     
+   overflow: hidden; 
+   text-align: start;
+
+}
+.UserFeedback {
+    width: 100%;
+    height: 35%;
+    /* border: solid red;  */
+
+}
+.titleUserFeedback{
+    width: 100%;
+    height: 20%;
+    /* border: solid red;  */
+    display: flex;
+    align-items: center;
+    text-align: start;
+    font-size: 20px;
+}
+.overallRatingUserFeedback{
+    width: 110%;
+    height: 90%;
+    /* border: solid red;  */
+    background-color: #f9f9f9;
+}
+.titleoverallRatingUserFeedback{
+    text-align: start;
+    width: 25%;
+    height: 15%;
+    /* border: solid red; */
+    position: relative;
+    left: 15px;
+    top: 15px;
+    font-size: 12px;
+}
+.customerRatingStar{
+    position: relative;
+    left: 15px;
+    height: 20%;
+}
+.writeReview{
+    width: 95%;
+    height: 30%;
+    /* border: solid red; */
+    background-color: white;
+    margin-left: 15px;
+}
+.inputwriteReview{
+    position: relative;
+    left: -150px;
+}
