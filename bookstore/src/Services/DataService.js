@@ -11,3 +11,12 @@ export const GetAllBookApi = () => {
     console.log("after")
     return response
 }
+
+export const GetBookByIdApi = (bookId) => {
+    console.log("before")
+    console.log(bookId)
+    const response = axios.get(`https://localhost:44310/api/Book/getAllBookById?bookId=${bookId}`,HeaderConfig)
+    console.log("after")
+    return response
+}
+

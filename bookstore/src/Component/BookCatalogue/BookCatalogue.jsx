@@ -1,11 +1,22 @@
 import React from 'react'
 import '../BookCatalogue/BookCatalogue.css'
 import StarIcon from '@mui/icons-material/Star';
+import { useNavigate } from 'react-router-dom';
 
 function BookCatalogue(props) {
+
+    let navigate = useNavigate()
+
+    const openBookDetail=()=>{
+        const bookId = props.book.bookId;
+        localStorage.setItem("bookId", JSON.stringify(bookId))
+        navigate('/bookdetails')
+    }
+
+
     return (
         <>
-            <div className="BookCatalogueMainContainer">
+            <div onClick={openBookDetail} className="BookCatalogueMainContainer">
                 <div className="BookImage">
                     <img  className='imageBook' src={props.book.bookImage}  alt="" />
                 </div>

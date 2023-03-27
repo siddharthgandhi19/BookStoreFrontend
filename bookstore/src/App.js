@@ -20,12 +20,12 @@ function App() {
     {/* <Lander/> */}
     {/* <ForgotPassword/> */}
     {/* <ResetPasswordPage/> */}
-    {/* <Router1/> */}
+    <Router1/>
     {/* <Header/> */}
     {/* <BookCatalogue/> */}
     {/* <StartUpPage/> */}
     {/* <Dashboard/> */}
-    <BookDetail/>
+    {/* <BookDetail/> */}
     </div>
   );
 }

@@ -16,6 +16,8 @@
 }
 .imageBook{
     /* border: solid green; */
+    width: 50%;
+    height: 80%;
 }
 .BookDetail{
     width: 100%;

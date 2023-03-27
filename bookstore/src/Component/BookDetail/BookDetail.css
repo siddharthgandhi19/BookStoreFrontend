@@ -66,6 +66,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* border: solid red; */
 }
 
 .ImageBottomButtonBookDetail {
@@ -100,7 +101,7 @@
 }
 
 .TitleBookDetail {
-    width: 60%;
+    width: 90%;
     height: 25%;
     /* border: solid green; */
     font-size: 29px;
