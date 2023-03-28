@@ -7,7 +7,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import InputBase from '@mui/material/InputBase';
-import { GetBookByIdApi } from '../../Services/DataService';
+import { AddToCartApi, GetBookByIdApi } from '../../Services/DataService';
 import { useNavigate } from 'react-router-dom';
 
 function BookDetail() {
@@ -32,7 +32,7 @@ function BookDetail() {
         navigate('/dashboard')
     }
 
-
+    
     return (
         <div>
             <div className="MainContainerBookDetail">
@@ -73,7 +73,7 @@ function BookDetail() {
                                 </div>
                                 <div className="BookRatingCountBookDetail">
                                     <div className="BookRatingBookDetail">{bookDetail.rating} <StarIcon style={{ fontSize: 'small', color: '#ffffff' }} /></div>
-                                    <div className="BookCountBookDetail">{bookDetail.bookCount}</div>
+                                    <div className="BookCountBookDetail">({bookDetail.bookCount})</div>
                                 </div>
                                 <div className="PriceBookDetail">
                                     <div className="DiscountPriceBookDetail">Rs. {bookDetail.discountPrice} </div>

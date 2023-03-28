@@ -10,22 +10,24 @@ import BookCatalogue from './Component/BookCatalogue/BookCatalogue';
 import StartUpPage from './Component/StartUpPage/StartUpPage';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import BookDetail from './Component/BookDetail/BookDetail';
+import Cart from './Component/Cart/Cart';
 
 
 function App() {
   return (
     <div className="App">
       {/* <SignUp/> */}
-    {/* <Login/> */}
-    {/* <Lander/> */}
-    {/* <ForgotPassword/> */}
-    {/* <ResetPasswordPage/> */}
-    <Router1/>
-    {/* <Header/> */}
-    {/* <BookCatalogue/> */}
-    {/* <StartUpPage/> */}
-    {/* <Dashboard/> */}
-    {/* <BookDetail/> */}
+      {/* <Login/> */}
+      {/* <Lander/> */}
+      {/* <ForgotPassword/> */}
+      {/* <ResetPasswordPage/> */}
+      {/* <Router1/> */}
+      {/* <Header/> */}
+      {/* <BookCatalogue/> */}
+      {/* <StartUpPage/> */}
+      {/* <Dashboard/> */}
+      {/* <BookDetail/> */}
+      <Cart />
     </div>
   );
 }

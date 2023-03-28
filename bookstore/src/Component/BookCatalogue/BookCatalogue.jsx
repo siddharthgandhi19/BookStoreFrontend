@@ -29,7 +29,7 @@ function BookCatalogue(props) {
                     </div>
                     <div className="BookRatingCount">
                         <div className="BookRating">{props.book.rating} <StarIcon style={{fontSize:'small', color:'#ffffff'}}/></div>
-                        <div className="BookCount">{props.book.bookCount}</div>
+                        <div className="BookCount"> ({props.book.bookCount})</div>
                     </div>
                     <div className="Price">
                         <div className="DiscountPrice">Rs. {props.book.discountPrice}</div>

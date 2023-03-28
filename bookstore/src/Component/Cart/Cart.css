@@ -1,0 +1,162 @@
+.MainContainerCart {
+    width: 100vw;
+    height: 100vh;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: column;
+}
+
+.EmptyboxMiddleSectionCart {
+    width: 12.6vw;
+    /* border: solid red; */
+}
+
+.MiddleSectionCart {
+    width: 55vw;
+    height: 10vh;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.HomeCart {
+    width: 6.15%;
+    /* border: solid red; */
+    text-align: left;
+    color: #9D9D9D;
+    font-size: 12px;
+}
+
+.CartId {
+    width: 7%;
+    /* border: solid red; */
+    text-align: left;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.MiddleSectionCartBoxDetails {
+    display: flex;
+    flex-direction: row;
+}
+
+.cartDetail {
+    width: 60vw;
+    height: 40vh;
+    border: 1px solid #707070;
+}
+
+.cartDetail1 {
+    width: 100%;
+    height: 20%;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.EmptycartDetail1 {
+    width: 5%;
+}
+
+.myCartTextId {
+    width: 60%;
+    height: 70%;
+    /* border: solid rgb(13, 163, 93); */
+    text-align: start;
+    font-weight: 500;
+
+}
+
+.cartDetail1Location {
+    width: 28%;
+    height: 70%;
+    /* border: solid red; */
+}
+
+.selectLocation {
+    width: 100%;
+    height: 100%;
+}
+
+.cartDetail2 {
+    width: 60%;
+    height: 60%;
+    /* border: solid red; */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cartDetail2Image {
+    width: 18%;
+    height: 75%;
+    /* border: solid red; */
+    margin-left: 30px;
+
+}
+
+.cartDetail2ImageSize {
+    width: 100%;
+    height: 100%;
+}
+
+.BookDetailsCart {
+    width: 65%;
+    height: 80%;
+    /* border: solid purple; */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 35px;
+    text-align: start;
+}
+
+.BookNameCart {
+    width: 100%;
+    height: 25%;
+    /* border: solid red; */
+}
+
+.AuthorNameCart {
+    font-size: 10px;
+    height: 15%;
+    color: #9D9D9D;
+}
+
+.PriceCart {
+        width: 100%;
+        height: 20%;
+        /* border: solid green; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.OriginalPriceCart {
+    width: 22%;
+    font-weight: 500;
+    /* border: solid red; */
+}
+
+.DiscountPriceCart {
+    width: 20%;
+    height: 40%;
+    /* border: solid red; */
+    font-size: 10px;
+    text-decoration: line-through;
+    text-align: start;
+    color: #9D9D9D;
+}
+
+.cartDetail3 {
+    width: 100%;
+    height: 15%;
+    /* border: solid red; */
+    position: relative;
+    left: 300px;
+    top: -5px;
+}

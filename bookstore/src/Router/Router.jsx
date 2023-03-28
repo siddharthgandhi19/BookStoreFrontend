@@ -1,6 +1,7 @@
 import React from 'react'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import BookDetail from '../Component/BookDetail/BookDetail'
+import Cart from '../Component/Cart/Cart'
 import ForgotPassword from '../Component/ForgotPasswordPage/ForgotPasswordPage'
 import ResetPasswordPage from '../Component/ResetPasswordPage/ResetPasswordPage'
 import SignUp from '../Component/SignUp/SignUp'
@@ -19,6 +20,7 @@ function Router1() {
             <Route path='/forgetpassword' element={<ForgotPassword />} />
             <Route path='/resetpassword' element={<ResetPasswordPage />} />
             <Route path='/bookdetails' element={<BookDetail/>}/>
+            <Route path='/cart' element={<Cart/>}/>
         </Routes>
       </Router>
     </div>
