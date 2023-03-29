@@ -1,9 +1,8 @@
 import axios from 'axios'
 
 const HeaderConfig = {
-    headers:{Authorization:`bearer ${localStorage.getItem("token")}`}
+    headers:{Authorization:`Bearer ${localStorage.getItem('token')}`}
 }
-
 
 export const GetAllBookApi = () => {
     console.log("before")
@@ -20,3 +19,7 @@ export const GetBookByIdApi = (bookId) => {
     return response
 }
 
+export const GetAllCartApi =()=>{
+    const response = axios.get('https://localhost:44310/api/Cart/GetCartByUserId',HeaderConfig)
+    return response
+}

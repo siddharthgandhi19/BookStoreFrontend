@@ -18,7 +18,7 @@ function Lander() {
         <> 
             <div className="body">
                 <div className="leftContainer">
-                    <img className='leftLanderImage' src="https://public-v2links.adobecc.com/d096df37-ca37-4026-553f-8cfa6bec09ec/component?params=component_id%3A634ba680-536e-4b6f-b4a3-41986b9b22f5&params=version%3A0&token=1679718493_da39a3ee_43de59a6449430a8428d14e6632d3420f7fc3a2e&api_key=CometServer1" alt="" />
+                    <img className='leftLanderImage' src="https://public-v2links.adobecc.com/d096df37-ca37-4026-553f-8cfa6bec09ec/component?params=component_id%3A634ba680-536e-4b6f-b4a3-41986b9b22f5&params=version%3A0&token=1680167780_da39a3ee_fe198e492871a65a01b26b0db59310b313a4edcc&api_key=CometServer1" alt="" />
                     <div className="leftContainerText">
                         ONLINE BOOK SHOPPING
                     </div>

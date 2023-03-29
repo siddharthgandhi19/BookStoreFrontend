@@ -61,6 +61,7 @@ function Login() {
             LoginApi(userDetail)
                 .then(response => {
                     console.log(response)
+                    localStorage.setItem('token',response.data.data)
                     navigate('/dashboard')
                 })
                 .catch(error => {

@@ -32,6 +32,9 @@ function BookDetail() {
         navigate('/dashboard')
     }
 
+    const listenToCart = ()=>{
+        navigate('/cart')
+    }
     
     return (
         <div>
@@ -52,7 +55,7 @@ function BookDetail() {
                                 <img style={{ width: '80%', height:'80%'}} src={bookDetail.bookImage} alt="" />
                             </div>
                             <div className="ImageBottomButtonBookDetail">
-                                <Button size="small" variant="contained" style={{ width: '25vw', backgroundColor: '#A03037', textTransform: 'none', fontSize: '17px' }}>
+                                <Button onClick={listenToCart} size="small" variant="contained" style={{ width: '25vw', backgroundColor: '#A03037', textTransform: 'none', fontSize: '17px' }}>
                                     ADD TO BAG
                                 </Button>
                                 <Button size="small" variant="contained" style={{ width: '25vw', backgroundColor: '#333333', textTransform: 'none', fontSize: '17px', marginLeft: '20px' }}>

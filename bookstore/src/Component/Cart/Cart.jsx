@@ -3,11 +3,20 @@ import '../Cart/Cart.css'
 import Header from '../Header/Header'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Box, Button, Paper } from '@mui/material'
-import { GetCartApi } from '../../Services/DataService';
+import { GetAllCartApi } from '../../Services/DataService';
 
 
 function Cart() {
 
+    const [cartArray, setCartArray] = useState([])
+
+    useEffect(() => {
+        GetAllCartApi()
+            .then((response) => {
+                console.log(response)
+                setCartArray(response.data.data)
+            }).catch((error) => { console.log(error) })
+    }, [])
 
     return (
         <div>
@@ -39,30 +48,36 @@ function Cart() {
                             </div>
                         </div>
 
-                        <div className="cartDetail2">
-                            <div className="cartDetail2Image">
-                                <img className='cartDetail2ImageSize' alt="" />
-                            </div>
-                            <div className="BookDetailsCart">
-                                <div className="BookNameCart">
-                                    Don't Make Me Think
 
-                                </div>
-                                <div className="AuthorNameCart">
-                                    by Steve Krug
 
+                       {
+                            cartArray.map((cart)=>(
+                                <div className="cartDetail2">
+                                <div className="cartDetail2Image">
+                                    <img className='cartDetail2ImageSize' alt="" />
                                 </div>
-                                <div className="PriceCart">
-                                    <div className="OriginalPriceCart">
-                                        Rs. 1500
+                                <div className="BookDetailsCart">
+                                    <div className="BookNameCart">
+                                        Don't Make Me Think
+    
                                     </div>
-                                    <div className="DiscountPriceCart">
-                                        Rs. 2000
-
+                                    <div className="AuthorNameCart">
+                                        by Steve Krug
+    
+                                    </div>
+                                    <div className="PriceCart">
+                                        <div className="OriginalPriceCart">
+                                            Rs. 1500
+                                        </div>
+                                        <div className="DiscountPriceCart">
+                                            Rs. 2000
+    
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            ))
+                       }
 
 
 
