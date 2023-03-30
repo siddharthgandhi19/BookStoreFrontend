@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Header/Header'
 import '../BookDetail/BookDetail.css'
 import StarIcon from '@mui/icons-material/Star';
@@ -13,10 +13,10 @@ import { useNavigate } from 'react-router-dom';
 function BookDetail() {
 
     const [bookDetail, setBookDetail] = useState([])
-  
+
     const bookId = JSON.parse(localStorage.getItem("bookId"));
     console.log(bookId)
-    
+
     useEffect(() => {
         GetBookByIdApi(bookId)
             .then((response) => {
@@ -28,21 +28,34 @@ function BookDetail() {
 
 
     let navigate = useNavigate()
-    const navigateToDashboard =()=>{
+    const navigateToDashboard = () => {
         navigate('/dashboard')
     }
 
-    const listenToCart = ()=>{
-        navigate('/cart')
-    }
-    
+
+    const cartData = { "bookId": 0, "bookCount": 0 }
+
+    const listenToCart = () => {
+        cartData.bookId = Number(localStorage.getItem("bookId"))
+        cartData.bookCount = 1
+        AddToCartApi(cartData)
+            .then((response) => {
+                console.log(response)
+                localStorage.setItem("CartId", response.data.data)
+                navigate('/cart')
+            })
+            .catch((error) => { console.log(error) })
+        }
+
+
+
     return (
         <div>
             <div className="MainContainerBookDetail">
                 <Header />
                 <div className="MiddleSectionBookDetail">
                     <div className="HeaderMiddleSectionBookDetail">
-                        <div onClick={navigateToDashboard} style={{cursor: 'pointer'}} className="Home">
+                        <div onClick={navigateToDashboard} style={{ cursor: 'pointer' }} className="Home">
                             Home /
                         </div>
                         <div className="BookId">
@@ -52,7 +65,7 @@ function BookDetail() {
                     <div className="BookDescriptionBookDetail">
                         <div className="LeftContainerBookDetail">
                             <div className="ImageBoxBookDetail">
-                                <img style={{ width: '80%', height:'80%'}} src={bookDetail.bookImage} alt="" />
+                                <img style={{ width: '80%', height: '80%' }} src={bookDetail.bookImage} alt="" />
                             </div>
                             <div className="ImageBottomButtonBookDetail">
                                 <Button onClick={listenToCart} size="small" variant="contained" style={{ width: '25vw', backgroundColor: '#A03037', textTransform: 'none', fontSize: '17px' }}>
@@ -68,7 +81,7 @@ function BookDetail() {
                             <div className="BookDetails">
                                 <div className="TitleBookDetail">
                                     {/* Don't Make Me Think */}
-                                {bookDetail.bookName}
+                                    {bookDetail.bookName}
                                 </div>
                                 <div className="AuthorNameBookDetail">
                                     {/* by Steve Krug */}
@@ -90,7 +103,7 @@ function BookDetail() {
                                     Book Details
                                 </div>
                                 <div className="descriptionBookDescription">
-                                {bookDetail.description}
+                                    {bookDetail.description}
                                 </div>
                             </div>
                             <div style={{ width: '40vw', height: '1px', backgroundColor: '#9D9D9D' }}></div>
@@ -108,10 +121,10 @@ function BookDetail() {
                                         </Stack>
                                     </div>
                                     <div className="writeReview" >
-                                    <div className='inputwriteReview'><InputBase placeholder="Write your review" /></div>
-                                    <Button size="small" variant="contained" style={{ width: '6vw', backgroundColor: '#3371B5', textTransform: 'none', fontSize: '14px', marginTop: '60px', marginLeft:'400px' }}>
-                                    Submit
-                                </Button>
+                                        <div className='inputwriteReview'><InputBase placeholder="Write your review" /></div>
+                                        <Button size="small" variant="contained" style={{ width: '6vw', backgroundColor: '#3371B5', textTransform: 'none', fontSize: '14px', marginTop: '60px', marginLeft: '400px' }}>
+                                            Submit
+                                        </Button>
                                     </div>
                                 </div>
 

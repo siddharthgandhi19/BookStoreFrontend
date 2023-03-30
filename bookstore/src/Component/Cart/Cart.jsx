@@ -3,7 +3,8 @@ import '../Cart/Cart.css'
 import Header from '../Header/Header'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Box, Button, Paper } from '@mui/material'
-import { GetAllCartApi } from '../../Services/DataService';
+import { GetAllCartApi, RemoveFromCartApi } from '../../Services/DataService';
+import { useNavigate } from 'react-router-dom';
 
 
 function Cart() {
@@ -18,13 +19,27 @@ function Cart() {
             }).catch((error) => { console.log(error) })
     }, [])
 
+    let navigate = useNavigate()
+    const navigateToDashboard = () => {
+        navigate('/dashboard')
+    }
+
+    const removeFromCart = (cartId) => {
+        console.log(cartId)
+        RemoveFromCartApi(cartId)
+            .then((response) => {
+                console.log(response)
+            }).catch((error) => { console.log(error) })
+    }
+
+
     return (
         <div>
             <div className="MainContainerCart">
                 <Header />
                 <div className="MiddleSectionCart">
                     <div className="EmptyboxMiddleSectionCart"> </div>
-                    <div style={{ cursor: 'pointer' }} className="HomeCart">
+                    <div onClick={navigateToDashboard} style={{ cursor: 'pointer' }} className="HomeCart">
                         Home /
                     </div>
                     <div className="CartId">
@@ -50,34 +65,37 @@ function Cart() {
 
 
 
-                       {
-                            cartArray.map((cart)=>(
+                        {
+                            cartArray.map((cart) => (
                                 <div className="cartDetail2">
-                                <div className="cartDetail2Image">
-                                    <img className='cartDetail2ImageSize' alt="" />
-                                </div>
-                                <div className="BookDetailsCart">
-                                    <div className="BookNameCart">
-                                        Don't Make Me Think
-    
+                                    <div className="cartDetail2Image">
+                                        <img className='cartDetail2ImageSize' alt="" />
                                     </div>
-                                    <div className="AuthorNameCart">
-                                        by Steve Krug
-    
-                                    </div>
-                                    <div className="PriceCart">
-                                        <div className="OriginalPriceCart">
-                                            Rs. 1500
+                                    <div className="BookDetailsCart">
+                                        <div className="BookNameCart">
+                                            Don't Make Me Think
+
                                         </div>
-                                        <div className="DiscountPriceCart">
-                                            Rs. 2000
-    
+                                        <div className="AuthorNameCart">
+                                            by Steve Krug
+
+                                        </div>
+                                        <div className="PriceCart">
+                                            <div className="OriginalPriceCart">
+                                                Rs. 1500
+                                            </div>
+                                            <div className="DiscountPriceCart">
+                                                Rs. 2000
+
+                                            </div>
+                                        </div>
+                                        <div onClick={()=>removeFromCart(cart.cartId)} style={{ cursor: 'pointer' }} className="RemoveCart">
+                                            Remove
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             ))
-                       }
+                        }
 
 
 

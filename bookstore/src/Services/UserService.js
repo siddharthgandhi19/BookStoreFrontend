@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const HeaderConfig = {
-    headers:{Authorization:`bearer ${localStorage.getItem("token")}`}
+    headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}
 }
 
 export const LoginApi = (loginObj) => {
