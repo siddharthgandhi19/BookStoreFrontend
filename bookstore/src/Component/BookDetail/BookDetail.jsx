@@ -7,7 +7,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import InputBase from '@mui/material/InputBase';
-import { AddToCartApi, GetBookByIdApi } from '../../Services/DataService';
+import { AddToCartApi, AddToWishlistApi, GetBookByIdApi } from '../../Services/DataService';
 import { useNavigate } from 'react-router-dom';
 
 function BookDetail() {
@@ -32,6 +32,7 @@ function BookDetail() {
         navigate('/dashboard')
     }
 
+    
 
     const cartData = { "bookId": 0, "bookCount": 0 }
 
@@ -45,7 +46,19 @@ function BookDetail() {
                 navigate('/cart')
             })
             .catch((error) => { console.log(error) })
-        }
+    }
+
+
+   
+    const moveToWishList = () => {
+        AddToWishlistApi(localStorage.getItem('bookId'))
+            .then((response) => {
+                console.log(response)
+                navigate('/wishlist')
+            })
+            .catch((error) => { console.log(error) })
+    }
+
 
 
 
@@ -71,7 +84,7 @@ function BookDetail() {
                                 <Button onClick={listenToCart} size="small" variant="contained" style={{ width: '25vw', backgroundColor: '#A03037', textTransform: 'none', fontSize: '17px' }}>
                                     ADD TO BAG
                                 </Button>
-                                <Button size="small" variant="contained" style={{ width: '25vw', backgroundColor: '#333333', textTransform: 'none', fontSize: '17px', marginLeft: '20px' }}>
+                                <Button onClick={moveToWishList} size="small" variant="contained" style={{ width: '25vw', backgroundColor: '#333333', textTransform: 'none', fontSize: '17px', marginLeft: '20px' }}>
                                     <FavoriteIcon size="small" style={{ marginRight: '20px' }} />  WISHLIST
                                 </Button>
                             </div>

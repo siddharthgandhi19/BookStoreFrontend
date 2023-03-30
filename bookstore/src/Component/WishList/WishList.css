@@ -1,16 +1,17 @@
-.MaincontainerWishlist{
+.MaincontainerWishlist {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     /* border: solid red; */
     display: flex;
     flex-direction: column;
 }
+
 .EmptyboxMiddleSectionWishlist {
     width: 12.6vw;
     /* border: solid red; */
 }
 
-.MiddleSectionWishlist{
+.MiddleSectionWishlist {
     width: 55%;
     height: 50px;
     /* border: solid red; */
@@ -19,7 +20,7 @@
     align-items: center;
 }
 
-.HomeWish{
+.HomeWish {
     width: 6.15%;
     /* border: solid red; */
     text-align: left;
@@ -34,57 +35,77 @@
     font-size: 12px;
     font-weight: 500;
 }
-.MiddleSectionWishBoxDetails{
+
+.MiddleSectionWishBoxDetails {
     display: flex;
     flex-direction: row;
+    /* border: solid pink; */
+    width: 100%;
+    height: auto;
 }
-.WishlistDetails{
+
+.WishlistDetails {
     width: 74%;
-    height: 60vh;
-    border: 1px solid #707070;
+    height: auto;
+   
     /* border: solid red; */
 }
-.WishlistDetailsHeader{
+
+.WishlistDetailsHeader {
     width: 100%;
-    height: 15%;
+    height: 50px;
     /* border: solid red; */
     background-color: #E4E4E4;
-    border: 1px solid #707070;
     display: flex;
     align-items: center;
+    border: 1px solid #707070;
 }
-.myWishlistId{
+
+.myWishlistId {
     margin-left: 20px;
     font-weight: 600;
 }
-.BookDetailsWishlist{
+
+.BookDetailsWishlist {
     width: 100%;
-    height: 40%;
-    /* border: solid red; */
-    
+    height: auto;
+    /* border: solid red;  */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
-.BookDetailsWishlist1{
+
+.BookDetailsWishlist1 {
     width: 100%;
-    height: 85%;
+    height: 25vh;
     /* border: solid green; */
     display: flex;
     align-items: center;
     justify-content: space-around;
+    border: 1px solid #707070; 
 }
-.imageWishlist{
-    width: 10%;
-    height: 90%;
-    border: 1px solid black;
+
+.imageWishlist {
+    width: 7%;
+    height: 70%;
+    /* border: 1px solid black; */
 }
-.BookDataInWishlist{
+
+.imageWishlistSize {
+    width: 100%;
+    height: 100%;
+}
+
+.BookDataInWishlist {
     width: 70%;
-    height: 90%;
+    height: 70%;
     /* border: solid green; */
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: center;
 }
+
 .BookNameWishlist {
     width: 40%;
     height: 25%;
@@ -92,16 +113,16 @@
     text-align: start;
 }
 
-.AuthorNameWishlist{
+.AuthorNameWishlist {
     font-size: 10px;
     height: 15%;
     color: #9D9D9D;
 }
 
 .PriceWishlist {
-        width: 100%;
-        height: 20%;
-        /* border: solid green; */
+    width: 100%;
+    height: 20%;
+    /* border: solid green; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -109,22 +130,25 @@
 }
 
 .OriginalPriceWishlist {
-    width: 9%;
+    width: 9.5%;
     font-weight: 500;
     /* border: solid red; */
+    position: relative;
+    left: -5px;
 }
 
-.DiscountPriceWishlist{
-    width:8%;
-    height: 40%;
+.DiscountPriceWishlist {
+    width: 8%;
+    height: 60%;
     /* border: solid red; */
     font-size: 10px;
     text-decoration: line-through;
     color: #9D9D9D;
+    text-align: start;
 }
 
-.DeleteIconWishlist{
-    width: 10%;
-    height: 50%;
+.DeleteIconWishlist {
+    width: 3%;
+    height: 20%;
     /* border: solid orange; */
 }

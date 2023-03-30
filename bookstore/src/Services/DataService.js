@@ -33,3 +33,19 @@ export const RemoveFromCartApi = (CartId)=>{
     const response = axios.delete(`https://localhost:44310/api/Cart/RemoveFromCart?CartId=${CartId}`,HeaderConfig)
     return response
 }
+
+
+export const GetAllWishlistApi = ()=>{
+    const response = axios.get('https://localhost:44310/api/WishList/GetWishList',HeaderConfig)
+    return response
+}
+
+export const AddToWishlistApi = (bookId)=>{
+    const response = axios.post(`https://localhost:44310/api/WishList/AddToWishList?BookId=${bookId}`,null,HeaderConfig)
+    return response
+}
+
+export const DeleteFromWishListApi = (wishListId)=>{
+    const response = axios.delete(`https://localhost:44310/api/WishList/RemoveWishList?WishListId=${wishListId}`,HeaderConfig)
+    return response
+}
