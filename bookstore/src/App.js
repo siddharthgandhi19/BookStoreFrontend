@@ -11,6 +11,7 @@ import StartUpPage from './Component/StartUpPage/StartUpPage';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import BookDetail from './Component/BookDetail/BookDetail';
 import Cart from './Component/Cart/Cart';
+import WishList from './Component/WishList/WishList';
 
 
 function App() {
@@ -21,13 +22,14 @@ function App() {
       {/* <Lander/> */}
       {/* <ForgotPassword/> */}
       {/* <ResetPasswordPage/> */}
-      <Router1/>
+      {/* <Router1/> */}
       {/* <Header/> */}
       {/* <BookCatalogue/> */}
       {/* <StartUpPage/> */}
       {/* <Dashboard/> */}
       {/* <BookDetail/> */}
       {/* <Cart /> */}
+      <WishList/>
     </div>
   );
 }
