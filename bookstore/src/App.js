@@ -13,6 +13,7 @@ import BookDetail from './Component/BookDetail/BookDetail';
 import Cart from './Component/Cart/Cart';
 import WishList from './Component/WishList/WishList';
 import OrderSuccessfull from './Component/OrderSuccessfull/OrderSuccessfull';
+import Order from './Component/Order/Order';
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
       {/* <Lander/> */}
       {/* <ForgotPassword/> */}
       {/* <ResetPasswordPage/> */}
-      <Router1/>
+      {/* <Router1/> */}
       {/* <Header/> */}
       {/* <BookCatalogue/> */}
       {/* <StartUpPage/> */}
@@ -32,6 +33,7 @@ function App() {
       {/* <Cart /> */}
       {/* <WishList/> */}
       {/* <OrderSuccessfull/> */}
+      <Order/>
     </div>
   );
 }
