@@ -199,7 +199,7 @@
 }
 .UserFeedback {
     width: 100%;
-    height: 35%;
+    height: 30%;
     /* border: solid red;  */
 
 }
@@ -243,4 +243,46 @@
 .inputwriteReview{
     position: relative;
     left: -150px;
+}
+.UserLiveFeedback{
+    margin-top: 50px;
+    width: 110%;
+    height: auto;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: column;
+}
+.UserLiveFeedbackCircleName{
+    width: 100%;
+    height: 35px;
+    /* border: solid green; */
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.circleName{
+    width: 6%;
+    height: 80%;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: #E4E4E4;
+    color: #707070;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.UserLiveFeedbackfullName{
+    width: 46%;
+    height: 70%;
+    /* border: solid red; */
+    text-align: start;
+    margin-left: 5px;
+}
+.UserLiveFeedbackRating{
+    width: 35%;
+    height: 10%;
+    /* border: solid red; */
+}
+.feedbackUserLiveFeedback{
+    text-align: start;
 }

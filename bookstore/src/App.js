@@ -12,6 +12,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import BookDetail from './Component/BookDetail/BookDetail';
 import Cart from './Component/Cart/Cart';
 import WishList from './Component/WishList/WishList';
+import OrderSuccessfull from './Component/OrderSuccessfull/OrderSuccessfull';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       {/* <BookDetail/> */}
       {/* <Cart /> */}
       {/* <WishList/> */}
+      {/* <OrderSuccessfull/> */}
     </div>
   );
 }

@@ -49,3 +49,9 @@ export const DeleteFromWishListApi = (wishListId)=>{
     const response = axios.delete(`https://localhost:44310/api/WishList/RemoveWishList?WishListId=${wishListId}`,HeaderConfig)
     return response
 }
+
+
+export const GetAllFeedbackApi = (bookId)=>{
+    const response = axios.get( ` https://localhost:44310/api/Feedback/FeedbacksByBookId?BookId=${bookId}`,HeaderConfig)
+    return response
+}

@@ -7,7 +7,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import InputBase from '@mui/material/InputBase';
-import { AddToCartApi, AddToWishlistApi, GetBookByIdApi } from '../../Services/DataService';
+import { AddToCartApi, AddToWishlistApi, GetAllFeedbackApi, GetBookByIdApi } from '../../Services/DataService';
 import { useNavigate } from 'react-router-dom';
 
 function BookDetail() {
@@ -32,7 +32,7 @@ function BookDetail() {
         navigate('/dashboard')
     }
 
-    
+
 
     const cartData = { "bookId": 0, "bookCount": 0 }
 
@@ -49,7 +49,7 @@ function BookDetail() {
     }
 
 
-   
+
     const moveToWishList = () => {
         AddToWishlistApi(localStorage.getItem('bookId'))
             .then((response) => {
@@ -59,7 +59,17 @@ function BookDetail() {
             .catch((error) => { console.log(error) })
     }
 
-
+    const [feedbackDetail, setFeedbackDetail] = useState([])
+    
+    useEffect(() => {
+        GetAllFeedbackApi(bookId)
+          .then((response) => {
+            console.log(response)
+            setFeedbackDetail(response.data.data)
+          }).catch((error) => {
+            console.log(error)
+          })
+      }, [])
 
 
     return (
@@ -142,7 +152,36 @@ function BookDetail() {
                                 </div>
 
                             </div>
+                            {
+                                feedbackDetail.map((feedback) => (
+
+                                    <div className="UserLiveFeedback">
+                                        <div className="UserLiveFeedbackCircleName">
+                                            <div className="circleName">SG</div>
+                                            <div className="UserLiveFeedbackfullName">
+                                                {/* Siddharth Gandhi */}
+                                                {feedback.fullName}
+                                            </div>
+                                        </div>
+                                        <div className="UserLiveFeedbackRating">
+                                            <Rating name="half-rating" defaultValue={feedback.rating} precision={0.5} />
+                                        </div>
+                                        <div className="feedbackUserLiveFeedback">
+                                            {/* Good product. Even though the translation could have been better, Chanakya's neeti are thought provoking. Chanakya has written on many different topics and his writings are succinct. */}
+                                            {feedback.comment}
+                                        </div>
+                                    </div>
+
+
+
+                                ))
+                            }
+
+
+
+
                         </div>
+
                     </div>
                 </div>
 
