@@ -7,7 +7,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import InputBase from '@mui/material/InputBase';
-import { AddToCartApi, AddToWishlistApi, GetAllFeedbackApi, GetBookByIdApi } from '../../Services/DataService';
+import { AddFeedbackApi, AddToCartApi, AddToWishlistApi, GetAllFeedbackApi, GetBookByIdApi } from '../../Services/DataService';
 import { useNavigate } from 'react-router-dom';
 
 function BookDetail() {
@@ -60,6 +60,13 @@ function BookDetail() {
     }
 
     const [feedbackDetail, setFeedbackDetail] = useState([])
+
+    const [feedbackObj, setFeedbackObj] = useState({
+
+        bookId: Number(localStorage.getItem("bookId")),
+        comment: "",
+        rating: 0
+      })
     
     useEffect(() => {
         GetAllFeedbackApi(bookId)
@@ -71,6 +78,22 @@ function BookDetail() {
           })
       }, [])
 
+      const enterComment = (event) => {
+        setFeedbackObj((prevState) => ({ ...prevState, comment: event.target.value }));
+      };
+    
+      const enterRating = (event) => {
+        setFeedbackObj((prevState) => ({ ...prevState, rating: (event.target.value) }));
+      };
+
+     const feedbackListener = ()=>{
+        AddFeedbackApi(feedbackObj)
+        .then((response) => {
+          console.log(response)
+        })
+        .catch((error) => { console.log(error) })
+      console.log(" add feedback successful")
+    }
 
     return (
         <div>
@@ -140,12 +163,12 @@ function BookDetail() {
                                     </div>
                                     <div className="customerRatingStar">
                                         <Stack spacing={1}>
-                                            <Rating name="half-rating" />
+                                            <Rating name="half-rating" defaultValue={0} precision={0.5}  onChange={enterRating}/>
                                         </Stack>
                                     </div>
                                     <div className="writeReview" >
-                                        <div className='inputwriteReview'><InputBase placeholder="Write your review" /></div>
-                                        <Button size="small" variant="contained" style={{ width: '6vw', backgroundColor: '#3371B5', textTransform: 'none', fontSize: '14px', marginTop: '60px', marginLeft: '400px' }}>
+                                        <div className='inputwriteReview'><InputBase placeholder="Write your review"  onChange={enterComment}/></div>
+                                        <Button onClick={feedbackListener} size="small" variant="contained" style={{ width: '6vw', backgroundColor: '#3371B5', textTransform: 'none', fontSize: '14px', marginTop: '60px', marginLeft: '400px' }}>
                                             Submit
                                         </Button>
                                     </div>
