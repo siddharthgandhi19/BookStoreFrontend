@@ -5,18 +5,31 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Box, Button, Paper } from '@mui/material'
 import { GetAllCartApi, OrderPlacedApi, RemoveFromCartApi } from '../../Services/DataService';
 import { useNavigate } from 'react-router-dom';
+import Address from '../Address/Address';
+import Order from '../Order/Order';
+import OrderSummary from '../OrderSummary/OrderSummary';
 
 
 function Cart() {
 
     const [cartArray, setCartArray] = useState([])
 
-    useEffect(() => {
+
+    const getAllCart = () => {
         GetAllCartApi()
             .then((response) => {
                 console.log(response)
                 setCartArray(response.data.data)
             }).catch((error) => { console.log(error) })
+    }
+
+    const autoRefresh = () => {
+        getAllCart()
+    }
+
+
+    useEffect(() => {
+        getAllCart()
     }, [])
 
     let navigate = useNavigate()
@@ -29,25 +42,27 @@ function Cart() {
         RemoveFromCartApi(cartId)
             .then((response) => {
                 console.log(response)
+                autoRefresh()
             }).catch((error) => { console.log(error) })
     }
 
-    const orderAdd = { "addressId": 0, "bookId": 0,"totalQuantity":0 }
-    
-    const navToOrder = ()=>{
+    const orderAdd = { "addressId": 0, "bookId": 0, "totalQuantity": 0 }
+
+    const navToOrder = () => {
         orderAdd.addressId = 2
         orderAdd.bookId = Number(localStorage.getItem("bookId"))
         orderAdd.totalQuantity = 1
 
         OrderPlacedApi(orderAdd)
-        .then((response) => {
-            console.log(response)
-            localStorage.setItem("orderId", response.data.data)
-            navigate('/order')
-        })
-        .catch((error) => { console.log(error) })
-    console.log(" add to cart successful")       
+            .then((response) => {
+                console.log(response)
+                localStorage.setItem("orderId", response.data.data)
+                navigate('/order')
+            })
+            .catch((error) => { console.log(error) })
+        console.log(" add to cart successful")
     }
+
 
 
     return (
@@ -106,7 +121,7 @@ function Cart() {
 
                                             </div>
                                         </div>
-                                        <div onClick={()=>removeFromCart(cart.cartId)} style={{ cursor: 'pointer' }} className="RemoveCart">
+                                        <div onClick={() => removeFromCart(cart.cartId)} style={{ cursor: 'pointer' }} className="RemoveCart">
                                             Remove
                                         </div>
                                     </div>
@@ -122,6 +137,12 @@ function Cart() {
 
                     </div>
                 </div>
+            </div>
+            <div className="Addresscall">
+                <Address />
+            </div>
+            <div className="OrderSummart">
+           <OrderSummary/>
             </div>
         </div>
     )

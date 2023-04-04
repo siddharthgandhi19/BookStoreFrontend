@@ -10,18 +10,27 @@ function WishList() {
 
     const [wishlistArray, setWishlistArray] = useState([])
 
-    useEffect(() => {
+    const getAllWishList =()=>{
         GetAllWishlistApi()
-            .then((response) => {
-                console.log(response)
-                setWishlistArray(response.data.data)
-            }).catch((error) => { console.log(error) })
+        .then((response) => {
+            console.log(response)
+            setWishlistArray(response.data.data)
+        }).catch((error) => { console.log(error) })
+    }
+
+    const autoRefresh = () =>{
+        getAllWishList()
+    }
+
+    useEffect(() => {
+         getAllWishList()
     }, [])
 
     const deleteWishlist = (wishListId) => {
         DeleteFromWishListApi(wishListId)
         .then((response) => {
             console.log(response)
+            autoRefresh()
         }).catch((error) => { console.log(error) })
     }
 
@@ -31,6 +40,7 @@ function WishList() {
         navigate('/dashboard')
     }
 
+   
     return (
         <div>
             <div className="MaincontainerWishlist">

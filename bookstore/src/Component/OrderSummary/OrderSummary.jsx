@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import '../Order/Order.css'
+import '../OrderSummary/OrderSummary.css'
 import Header from '../Header/Header'
 import { CancelledOrderApi, GetAllOrders } from '../../Services/DataService'
 import { Button } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
-function Order() {
+function OrderSummary() {
 
     const [orderArray, setOrderArray] = useState([])
 
-    const getAllOrders = ()=>{
+    const getAllOrders = () => {
         GetAllOrders()
-        .then((response) => {
-            console.log(response)
-            setOrderArray(response.data.data)
-        }).catch((error) => { console.log(error) })
-       } 
+            .then((response) => {
+                console.log(response)
+                setOrderArray(response.data.data)
+            }).catch((error) => { console.log(error) })
+    }
 
-       const autoRefresh = () =>{
+    const autoRefresh = () => {
         getAllOrders()
     }
 
@@ -24,37 +25,24 @@ function Order() {
         getAllOrders()
     }, [])
 
-    const cancelledOrder =(orderId)=>{
-        console.log(orderId)
-            CancelledOrderApi(orderId)
-            .then((response) => {
-                console.log(response)
-                autoRefresh()
-            }).catch((error) => { console.log(error) })
-        }
 
-           
+    let navigate = useNavigate()
+
+    const CheckoutToMyOrders = () => {
+        navigate('/order')
+    }
+
+
 
     return (
         <div>
-            <div className="OrderMainContainer">
-                <Header />
-                <div className="MiddleSectionWishlist">
-                    <div className="EmptyboxMiddleSectionWishlist"> </div>
-                    <div style={{ cursor: 'pointer' }} className="HomeOrder">
-                        Home /
-                    </div>
-                    <div className="OrderId">
-                        My Order
-                    </div>
-                </div>
-                <div className="OrderBox">
+            <div className="OrderSummary">
 
-
+                <div className="OrderSummaryBox">
                     {
                         orderArray.map((order) => (
-                            <div className="OrderBox1">
-                                <div className="imageOrder">
+                            <div className="OrderSummaryOrderBox1">
+                                <div className="imageOrderSummary">
                                     <img className="imageorderSize" src={order.bookImage} alt="" />
                                 </div>
                                 <div className="BookDataInOrder">
@@ -71,30 +59,28 @@ function Order() {
                                             {/* Rs. 1500 */}
                                             Rs. {order.originalPrice}
                                         </div>
-                                        <div className="DiscountPriceWishlist">
+                                        <div className="DiscountPriceOrder">
                                             {/* Rs. 2000 */}
                                             Rs.   {order.discountPrice}
                                         </div>
                                     </div>
                                 </div>
-                                    <div className="LasTOrderContainer">
-                                    <div className="OrderPlacedDate">
-                                Order Placed on {order.orderDate}
+                                <div className="LasTOrderContainer">
+
+
                                 </div>
-                                <div className="CancelOrder">
-                                <Button onClick={ ()=>cancelledOrder(order.orderId)} style={{ backgroundColor: '#3371B5' }} variant="contained">Cancel Order</Button>
-                                    </div>
-                                
                             </div>
-                            </div>
-                            
+
                         ))
                     }
-                            
+
+                    <div className="CancelOrder">
+                        <Button onClick={() => CheckoutToMyOrders()} style={{ backgroundColor: '#3371B5' }} variant="contained">Checkout</Button>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Order
+export default OrderSummary

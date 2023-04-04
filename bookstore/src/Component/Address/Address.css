@@ -1,0 +1,64 @@
+.Maincontaineraddress{
+    width: 60vw;
+    height: 70vh;
+    /* border:  solid green; */
+    border: 1px solid #DCDCDC;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.headerAddress{
+    width: 100%;
+    height: 15%;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.CustomerDetails{
+    font-weight: 500;
+    font-size: 20px;
+    position: relative;
+    left: 15px;
+}
+.fullnameaddress{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    /* border: solid red; */
+    text-align: start;
+    margin-left: 50px;
+}
+.mobilenumberaddress{
+    text-align: start;
+    position: relative;
+    left: -240px;
+}
+.cityTown{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 50px;
+}
+.addressaddress{
+    margin-left: 50px;
+}
+.mobilenumberaddress1{
+    position: relative;
+    left: -480px;
+}
+
+.radioIcon{
+    margin-left: 50px;
+}
+.continuebuttom{
+    margin-left: 350px;
+}
+
+
+
+
+

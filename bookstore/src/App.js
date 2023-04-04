@@ -14,6 +14,8 @@ import Cart from './Component/Cart/Cart';
 import WishList from './Component/WishList/WishList';
 import OrderSuccessfull from './Component/OrderSuccessfull/OrderSuccessfull';
 import Order from './Component/Order/Order';
+import Address from './Component/Address/Address';
+import OrderSummary from './Component/OrderSummary/OrderSummary';
 
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
       {/* <WishList/> */}
       {/* <OrderSuccessfull/> */}
       {/* <Order/> */}
+     {/* <Address/> */}
+     {/* <OrderSummary/> */}
     </div>
   );
 }

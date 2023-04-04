@@ -77,3 +77,12 @@ export const CancelledOrderApi = (orderId)=>{
     return response
 }
 
+export const AddAddressApi = (data)=>{
+    const response = axios.post('https://localhost:44310/api/Address/AddAddress',data,HeaderConfig)
+    return response
+}
+
+
+
+
+
