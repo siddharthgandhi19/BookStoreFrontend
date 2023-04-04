@@ -3,7 +3,7 @@ import '../Cart/Cart.css'
 import Header from '../Header/Header'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Box, Button, Paper } from '@mui/material'
-import { GetAllCartApi, RemoveFromCartApi } from '../../Services/DataService';
+import { GetAllCartApi, OrderPlacedApi, RemoveFromCartApi } from '../../Services/DataService';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -30,6 +30,23 @@ function Cart() {
             .then((response) => {
                 console.log(response)
             }).catch((error) => { console.log(error) })
+    }
+
+    const orderAdd = { "addressId": 0, "bookId": 0,"totalQuantity":0 }
+    
+    const navToOrder = ()=>{
+        orderAdd.addressId = 2
+        orderAdd.bookId = Number(localStorage.getItem("bookId"))
+        orderAdd.totalQuantity = 1
+
+        OrderPlacedApi(orderAdd)
+        .then((response) => {
+            console.log(response)
+            localStorage.setItem("orderId", response.data.data)
+            navigate('/order')
+        })
+        .catch((error) => { console.log(error) })
+    console.log(" add to cart successful")       
     }
 
 
@@ -100,7 +117,7 @@ function Cart() {
 
 
                         <div className="cartDetail3">
-                            <Button style={{ backgroundColor: '#3371B5' }} variant="contained">Place Order</Button>
+                            <Button onClick={navToOrder} style={{ backgroundColor: '#3371B5' }} variant="contained">Place Order</Button>
                         </div>
 
                     </div>

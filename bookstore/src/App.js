@@ -24,7 +24,7 @@ function App() {
       {/* <Lander/> */}
       {/* <ForgotPassword/> */}
       {/* <ResetPasswordPage/> */}
-      {/* <Router1/> */}
+      <Router1/>
       {/* <Header/> */}
       {/* <BookCatalogue/> */}
       {/* <StartUpPage/> */}
@@ -33,7 +33,7 @@ function App() {
       {/* <Cart /> */}
       {/* <WishList/> */}
       {/* <OrderSuccessfull/> */}
-      <Order/>
+      {/* <Order/> */}
     </div>
   );
 }

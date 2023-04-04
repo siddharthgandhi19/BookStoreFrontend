@@ -9,6 +9,7 @@ import StartUpPage from '../Component/StartUpPage/StartUpPage'
 import WishList from '../Component/WishList/WishList'
 import Dashboard from '../Pages/Dashboard/Dashboard'
 import Lander from '../Pages/Lander/Lander'
+import Order from '../Component/Order/Order'
 
 function Router1() {
   return (
@@ -23,6 +24,7 @@ function Router1() {
             <Route path='/bookdetails' element={<BookDetail/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/wishlist' element={<WishList/>}/>
+            <Route path='/order' element={<Order/>}/>
         </Routes>
       </Router>
     </div>

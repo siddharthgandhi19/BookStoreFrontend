@@ -60,3 +60,20 @@ export const AddFeedbackApi = (feedbackObj)=>{
     const response = axios.post('https://localhost:44310/api/Feedback/AddFeedBack',feedbackObj,HeaderConfig)
     return response
 }
+
+
+export const GetAllOrders = ()=>{
+    const response = axios.get('https://localhost:44310/api/Order/GetAllOrders',HeaderConfig)
+    return response
+}
+
+export const OrderPlacedApi = (data)=>{
+    const response = axios.post('https://localhost:44310/api/Order/Add',data,HeaderConfig)
+    return response
+}
+
+export const CancelledOrderApi = (orderId)=>{
+    const response = axios.delete(`https://localhost:44310/api/Order/DeleteOrder?OrderId=${orderId}`,HeaderConfig)
+    return response
+}
+
