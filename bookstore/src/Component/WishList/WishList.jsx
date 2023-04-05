@@ -60,7 +60,7 @@ function WishList() {
                     <div className="WishlistDetails">
                         <div className="WishlistDetailsHeader">
                             <div className="myWishlistId">
-                                My Wishlist (1)
+                                My Wishlist ({wishlistArray.length})
                             </div>
                         </div>
                         <div className="BookDetailsWishlist">

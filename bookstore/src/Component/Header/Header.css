@@ -9,6 +9,8 @@
 .HeaderBookStoreLogo {
     position: relative;
     left: 180px;
+    /* border: solid green; */
+    width: 3%;
 }
 
 .HeaderText {

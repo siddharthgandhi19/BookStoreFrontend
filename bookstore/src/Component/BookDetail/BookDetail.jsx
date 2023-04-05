@@ -135,7 +135,7 @@ function BookDetail() {
                                 </div>
                                 <div className="BookRatingCountBookDetail">
                                     <div className="BookRatingBookDetail">{bookDetail.rating} <StarIcon style={{ fontSize: 'small', color: '#ffffff' }} /></div>
-                                    <div className="BookCountBookDetail">({bookDetail.bookCount})</div>
+                                    <div className="BookCountBookDetail">({feedbackDetail.length})</div>
                                 </div>
                                 <div className="PriceBookDetail">
                                     <div className="DiscountPriceBookDetail">Rs. {bookDetail.discountPrice} </div>

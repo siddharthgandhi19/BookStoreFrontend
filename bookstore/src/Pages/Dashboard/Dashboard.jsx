@@ -30,7 +30,8 @@ function Dashboard() {
                             Books
                         </div>
                         <div className="CountLeftBelowHeaderDasboard">
-                            (128 items)
+                            {/* (128 items) */}
+                            ({dataArray.length} items)
                         </div>
                     </div>
                     <div className="RightBelowHeaderDasboard">

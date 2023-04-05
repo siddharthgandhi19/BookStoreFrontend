@@ -48,22 +48,6 @@ function Cart() {
             }).catch((error) => { console.log(error) })
     }
 
-    const orderAdd = { "addressId": 0, "bookId": 0, "totalQuantity": 0 }
-
-    const navToOrder = () => {
-        orderAdd.addressId = 2
-        orderAdd.bookId = Number(localStorage.getItem("bookId"))
-        orderAdd.totalQuantity = 1
-
-        OrderPlacedApi(orderAdd)
-            .then((response) => {
-                console.log(response)
-                localStorage.setItem("orderId", response.data.data)
-                navigate('/order')
-            })
-            .catch((error) => { console.log(error) })
-        console.log(" add to cart successful")
-    }
 
     const [toggleAddress, setToggleAddress] = useState(false)
 
@@ -76,7 +60,7 @@ function Cart() {
 
 
     const [toggleOrder, setToggleOrder] = useState(false)
-    
+
     const openOrderDetails = () => {
         setToggleOrder(true)
     }
@@ -84,6 +68,23 @@ function Cart() {
         setToggleOrder(false)
     }
 
+
+    const orderAdd = { "addressId": 0, "bookId": 0, "totalQuantity": 0 }
+
+    const AddToOrder = () => {
+        orderAdd.addressId = 2
+        orderAdd.bookId = Number(localStorage.getItem("bookId"))
+        orderAdd.totalQuantity = 1
+
+        OrderPlacedApi(orderAdd)
+            .then((response) => {
+                console.log(response)
+                localStorage.setItem("orderId", response.data.data)
+                // navigate('/order')
+            })
+            .catch((error) => { console.log(error) })
+        console.log(" add to cart successful")
+    }
 
     return (
         <div>
@@ -95,7 +96,7 @@ function Cart() {
                         Home /
                     </div>
                     <div className="CartId">
-                        My Cart
+                        My Cart 
                     </div>
                 </div>
                 <div className="MiddleSectionCartBoxDetails">
@@ -104,7 +105,7 @@ function Cart() {
                         <div className="cartDetail1">
                             <div className="EmptycartDetail1"></div>
                             <div className="myCartTextId">
-                                My Cart (1)
+                                My Cart ({cartArray.length})
                             </div>
                             <LocationOnIcon style={{ color: '#A03037', marginLeft: '5px' }} />
                             <div className="cartDetail1Location">
@@ -125,19 +126,23 @@ function Cart() {
                                     </div>
                                     <div className="BookDetailsCart">
                                         <div className="BookNameCart">
-                                            Don't Make Me Think
+                                            {/* Don't Make Me Think */}
+                                            {cart.bookName}
 
                                         </div>
                                         <div className="AuthorNameCart">
-                                            by Steve Krug
+                                            {/* by Steve Krug */}
+                                            {cart.authorName}
 
                                         </div>
                                         <div className="PriceCart">
                                             <div className="OriginalPriceCart">
-                                                Rs. 1500
+                                                {/* Rs. 1500 */}
+                                                Rs.    {cart.originalPrice}
                                             </div>
                                             <div className="DiscountPriceCart">
-                                                Rs. 2000
+                                                {/* Rs. 2000 */}
+                                                {cart.discountPrice}
 
                                             </div>
                                         </div>
@@ -152,7 +157,7 @@ function Cart() {
 
 
                         <div className="cartDetail3">
-                            <Button onClick={navToOrder} style={{ backgroundColor: '#3371B5' }} variant="contained">Place Order</Button>
+                            <Button onClick={AddToOrder} style={{ backgroundColor: '#3371B5' }} variant="contained">Place Order</Button>
                         </div>
 
                     </div>

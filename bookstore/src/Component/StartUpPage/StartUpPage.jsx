@@ -1,6 +1,8 @@
 import React from 'react'
+import '../../Component/StartUpPage/StartUpPage.css'
 import { useNavigate } from 'react-router-dom'
-import '../StartUpPage/StartUpPage.css'
+import image2 from '../Images/StartUpPageImage.png'
+
 
 
 
@@ -24,7 +26,7 @@ function StartUpPage() {
                         Login to view items in your wishlist.
                     </div>
                     <div className="StartUpPageImage">
-                        <img src={'../Component/Assets/StartUpPageImage'} alt="" />
+                        <img className='StartUpPageImageSize' src={image2} alt="" />
                     </div>
                     <div onClick={navToLander} style={{ cursor:'pointer' }} className="StartUpPageLoginSignup">
                         LOGIN/SIGNUP

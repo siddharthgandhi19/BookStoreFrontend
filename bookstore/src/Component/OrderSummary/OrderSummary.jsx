@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../OrderSummary/OrderSummary.css'
 import Header from '../Header/Header'
-import { CancelledOrderApi, GetAllOrders } from '../../Services/DataService'
+import { CancelledOrderApi, GetAllOrders, OrderPlacedApi } from '../../Services/DataService'
 import { Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
@@ -28,9 +28,12 @@ function OrderSummary(props) {  //props for toggle order order details
 
     let navigate = useNavigate()
 
-    const CheckoutToMyOrders = () => {
+    const navToOrderpage =()=>{
+        getAllOrders()
         navigate('/order')
     }
+
+
 
     const closeOrder=()=>{
         props.closeOrderDetails()
@@ -78,7 +81,7 @@ function OrderSummary(props) {  //props for toggle order order details
                     }
 
                     <div className="CancelOrderOrderSummary">
-                        <Button onClick={CheckoutToMyOrders} style={{ backgroundColor: '#3371B5' }} variant="contained">Checkout</Button>
+                        <Button onClick={navToOrderpage} style={{ backgroundColor: '#3371B5' }} variant="contained">Checkout</Button>
                     </div>
                 </div>
             </div>
