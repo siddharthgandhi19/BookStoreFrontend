@@ -12,8 +12,11 @@ import { AddAddressApi } from '../../Services/DataService';
 
 
 
-function Address() {
+function Address(props) {
 
+    const closeDetails =()=>{
+        props.closeAddressDetails()
+    }
 
     return (
         <div>
@@ -84,7 +87,7 @@ function Address() {
                                 </FormControl>
                 </div>
                 <div className="continuebuttom">
-                <Button size="small" style={{ width: '10vw' }} variant="contained">Continue</Button>
+                <Button onClick={closeDetails} style={{ width: '10vw' }} variant="contained">Continue</Button>
                 </div>
             </div>
         </div>

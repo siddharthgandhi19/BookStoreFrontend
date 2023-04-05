@@ -166,7 +166,12 @@
     top: -5px;
 }
 .Addresscall{
+    width:167vw;
     position: relative;
     left: 171px;
-    margin-top: 50px;
+    margin-top: 20px;
+}
+.OrderSummary1{
+    margin-top: 25px;
+    margin-left: 170px;
 }

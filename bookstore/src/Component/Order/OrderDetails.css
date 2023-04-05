@@ -1,0 +1,13 @@
+.OrderDetails{
+    width:60vw;
+    height: 8vh;
+    border: 1px solid #DCDCDC;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.textOrderDetails{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}

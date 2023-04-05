@@ -34,7 +34,7 @@
 .mobilenumberaddress{
     text-align: start;
     position: relative;
-    left: -240px;
+    left: -310px;
 }
 .cityTown{
     display: flex;
@@ -55,7 +55,7 @@
     margin-left: 50px;
 }
 .continuebuttom{
-    margin-left: 350px;
+    margin-left: 600px;
 }
 
 

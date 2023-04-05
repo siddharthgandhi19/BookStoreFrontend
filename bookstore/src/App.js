@@ -16,6 +16,8 @@ import OrderSuccessfull from './Component/OrderSuccessfull/OrderSuccessfull';
 import Order from './Component/Order/Order';
 import Address from './Component/Address/Address';
 import OrderSummary from './Component/OrderSummary/OrderSummary';
+import AddressDetails from './Component/Address/AddressDetails';
+import OrderDetails from './Component/Order/OrderDetails';
 
 
 function App() {
@@ -38,6 +40,8 @@ function App() {
       {/* <Order/> */}
      {/* <Address/> */}
      {/* <OrderSummary/> */}
+     {/* <AddressDetails/> */}
+     {/* <OrderDetails/> */}
     </div>
   );
 }

@@ -1,0 +1,14 @@
+.AddressDetails{
+    width:60vw;
+    height: 9vh;
+    border: 1px solid #DCDCDC;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.textAddressDetails{
+    height: 7vh;
+margin-left: 10px;
+display: flex;
+align-items: center;
+}

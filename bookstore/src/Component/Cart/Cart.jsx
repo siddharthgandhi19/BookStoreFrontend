@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import '../Cart/Cart.css'
 import Header from '../Header/Header'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { Box, Button, Paper } from '@mui/material'
+import { Button } from '@mui/material'
 import { GetAllCartApi, OrderPlacedApi, RemoveFromCartApi } from '../../Services/DataService';
 import { useNavigate } from 'react-router-dom';
 import Address from '../Address/Address';
 import Order from '../Order/Order';
 import OrderSummary from '../OrderSummary/OrderSummary';
+import AddressDetails from '../Address/AddressDetails';
+import OrderDetails from '../Order/OrderDetails';
 
 
 function Cart() {
@@ -63,6 +65,24 @@ function Cart() {
         console.log(" add to cart successful")
     }
 
+    const [toggleAddress, setToggleAddress] = useState(false)
+
+    const openAddressDetails = () => {
+        setToggleAddress(true)
+    }
+    const closeAddressDetails = () => {
+        setToggleAddress(false)
+    }
+
+
+    const [toggleOrder, setToggleOrder] = useState(false)
+    
+    const openOrderDetails = () => {
+        setToggleOrder(true)
+    }
+    const closeOrderDetails = () => {
+        setToggleOrder(false)
+    }
 
 
     return (
@@ -139,10 +159,17 @@ function Cart() {
                 </div>
             </div>
             <div className="Addresscall">
-                <Address />
+                {
+                    toggleAddress ? <Address closeAddressDetails={closeAddressDetails} /> : <AddressDetails openAddressDetails={openAddressDetails} />
+                }
+
             </div>
-            <div className="OrderSummart">
-           <OrderSummary/>
+            <div className="OrderSummary1">
+
+                {
+                    toggleOrder ? <OrderSummary closeOrderDetails={closeOrderDetails} /> : <OrderDetails openOrderDetails={openOrderDetails} />
+                }
+
             </div>
         </div>
     )

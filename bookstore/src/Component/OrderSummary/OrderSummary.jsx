@@ -5,7 +5,7 @@ import { CancelledOrderApi, GetAllOrders } from '../../Services/DataService'
 import { Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
-function OrderSummary() {
+function OrderSummary(props) {  //props for toggle order order details
 
     const [orderArray, setOrderArray] = useState([])
 
@@ -32,11 +32,14 @@ function OrderSummary() {
         navigate('/order')
     }
 
+    const closeOrder=()=>{
+        props.closeOrderDetails()
+    }
 
 
     return (
         <div>
-            <div className="OrderSummary">
+            <div className="OrderSummary" onClick={closeOrder} >
 
                 <div className="OrderSummaryBox">
                     {
@@ -45,27 +48,27 @@ function OrderSummary() {
                                 <div className="imageOrderSummary">
                                     <img className="imageorderSize" src={order.bookImage} alt="" />
                                 </div>
-                                <div className="BookDataInOrder">
-                                    <div className="BookNameOrder">
+                                <div className="BookDataInOrderOrderSummary">
+                                    <div className="BookNameOrderOrderSummary">
                                         {/* Don't Make Me Think */}
                                         {order.bookName}
                                     </div>
-                                    <div className="AuthorNameOrder">
+                                    <div className="AuthorNameOrderOrderSummary">
                                         {/* by Steve Krug */}
                                         {order.authorName}
                                     </div>
                                     <div className="PriceOrder">
-                                        <div className="OriginalPriceOrder">
+                                        <div className="OriginalPriceOrderOrderSummary">
                                             {/* Rs. 1500 */}
                                             Rs. {order.originalPrice}
                                         </div>
-                                        <div className="DiscountPriceOrder">
+                                        <div className="DiscountPriceOrderOrderSummary">
                                             {/* Rs. 2000 */}
                                             Rs.   {order.discountPrice}
                                         </div>
                                     </div>
                                 </div>
-                                <div className="LasTOrderContainer">
+                                <div className="LasTOrderContainerOrderSummary">
 
 
                                 </div>
@@ -74,8 +77,8 @@ function OrderSummary() {
                         ))
                     }
 
-                    <div className="CancelOrder">
-                        <Button onClick={() => CheckoutToMyOrders()} style={{ backgroundColor: '#3371B5' }} variant="contained">Checkout</Button>
+                    <div className="CancelOrderOrderSummary">
+                        <Button onClick={CheckoutToMyOrders} style={{ backgroundColor: '#3371B5' }} variant="contained">Checkout</Button>
                     </div>
                 </div>
             </div>

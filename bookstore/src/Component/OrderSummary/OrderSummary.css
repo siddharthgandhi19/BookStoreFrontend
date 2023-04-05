@@ -2,8 +2,6 @@
     width: 60vw;
     height: auto;
     /* border: solid red; */
-    position: relative;
-    left: 170px;
     margin-top: 50px;
     border: 1px solid #707070
 }
@@ -21,11 +19,11 @@
     height: 90px;
     border: 1px solid black;
 }
-.imageorderSize{
+.imageorderSizeOrderSummary{
     width: 100%;
     height: 100%;
 }
-.BookDataInOrder{
+.BookDataInOrderOrderSummary{
     width: 55%;
     height: 90px;
     /* border: solid green; */
@@ -34,21 +32,21 @@
     align-items: start;
 }
 
-.BookNameOrder {
+.BookNameOrderOrderSummary {
     width: 50%;
     height: 30px;
     /* border: solid red; */
     text-align: start;
 }
 
-.AuthorNameOrder {
+.AuthorNameOrderOrderSummary {
     font-size: 10px;
     height: 25px;
     color: #9D9D9D;
     /* border: solid red; */
 }
 
-.PriceOrder {
+.PriceOrderOrderSummary {
     width: 100%;
     height: 20%;
     /* border: solid green; */
@@ -58,7 +56,7 @@
 
 }
 
-.OriginalPriceOrder {
+.OriginalPriceOrderOrderSummary {
     width: 15%;
     font-weight: 500;
     /* border: solid red; */
@@ -66,7 +64,7 @@
     left: -3px;
 }
 
-.DiscountPriceOrder{
+.DiscountPriceOrderOrderSummary{
     width: 90%;
     height: 60%;
     /* border: solid red; */
@@ -77,7 +75,7 @@
 }
 
 
-.CancelOrder{
+.CancelOrderOrderSummary{
     width: 20%;
     height: 40%;
     /* border: solid red; */
